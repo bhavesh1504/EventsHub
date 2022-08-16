@@ -1,3 +1,11 @@
+#Task
+
+This project includes Role based authentication 1) Create an app where there are 3 route: login, register, category, product. User can access category route only if he is logged in and his role is admin, and product route only if he is logged in and his role is supervisor (for data storage and retreival use JSON Server).
+2) Use the application that was created in authentication task, an add an observable to it which stores the token in it, use this observable in the component to check whether the user is logged in or not.
+3) Create an interceptor that should append token to http headers, as well as create another dummy header X-USER which will hold user name (for api use JSON-Server)(wip).
+
+
+
 # EventsHub
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
