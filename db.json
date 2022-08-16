@@ -1,0 +1,30 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    
+    {
+      "email": "admin@admin.com",
+      "password": "adminadmin",
+      "role": "admin",
+      "id": 3
+    },
+    {
+      "email": "emp@emp.com",
+      "password": "empemp",
+      "role": "user",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {}
+}

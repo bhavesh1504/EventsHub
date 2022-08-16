@@ -1,0 +1,27 @@
+<div class="container mt-5 mb-5">
+
+    <div class="row d-flex justify-content-center align-items-center">
+
+        <div class="col-md-6">
+
+            <div class="card bg-dark p-3 text-center text-white">
+
+
+                <h1>Login</h1>
+                <form [formGroup]="loginForm">
+                <div class="p-2 px-5 py-5 round">
+                    <input type="text" class="form-control" placeholder="email" formControlName="email">
+                    <span class="text-danger" *ngIf="loginForm.controls['email'].errors && loginForm.controls['email'].touched">Required Valid Field</span>
+                    <input type="password" class="form-control" placeholder="password" formControlName="password">
+                    <span class="text-danger" *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].touched">Required Valid Field</span>
+                    <button (click)="login()" class="btn btn-danger w-100 signup-button" [disabled]="!loginForm.valid">Login</button>
+                </div>
+            </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>

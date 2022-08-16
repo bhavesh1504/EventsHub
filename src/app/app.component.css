@@ -1,0 +1,11 @@
+.navbar-nav{
+    margin-left: auto;
+}
+
+#hello{
+    cursor: pointer;
+}
+
+#hey{
+    color: #dc3545;
+}

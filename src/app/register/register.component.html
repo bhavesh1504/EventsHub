@@ -1,0 +1,38 @@
+<div class="container mt-5 mb-5">
+
+    <div class="row d-flex justify-content-center align-items-center">
+
+        <div class="col-md-6">
+
+            <div class="card bg-dark p-3 text-center text-white">
+
+
+                <h1>Register</h1>
+                <form [formGroup]="signupForm">
+                    <div class="form-group">
+                        <div class="p-2 px-5 py-5 round">
+                            <input formControlName="email" type="text" class="form-control" placeholder="email">
+                            <span class="text-danger" *ngIf="signupForm.controls['email'].errors && signupForm.controls['email'].touched">Required Valid Field</span>
+                            <input formControlName="password" type="password" class="form-control"placeholder="password">
+                            <span class="text-danger" *ngIf="signupForm.controls['password'].errors && signupForm.controls['password'].touched">Required Valid Field</span>
+                            <p style="position:relative; top: 15px; right: 10px;"><strong>Choose Your Role</strong></p>
+                            <select class="form-select mt-3 form-select-lg mb-3" aria-label=".form-select-lg example"
+                                formControlName="role">
+                                <option value="admin">Admin</option>
+                                <option value="user">Employee</option>
+                            </select>
+                            <button type="submit" (click)="registerUser()" [disabled]="!signupForm.valid"
+                                class="btn btn-danger w-100 signup-button">Register</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</div>
