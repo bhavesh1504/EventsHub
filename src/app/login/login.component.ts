@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  constructor(private formBuilder : FormBuilder, private http : HttpClient, private router: Router, private service : AuthService) { }
+  constructor(private formBuilder : FormBuilder, private http : HttpClient, private router: Router, private service : AuthService, private toast : NgToastService) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -32,22 +33,22 @@ export class LoginComponent implements OnInit {
       
     
       if(user?.role=='admin'){
-        localStorage.setItem('token',admin)
+        localStorage.setItem('token',admin);
         
-        this.router.navigate(["specialevents"])
-        alert("Login Successfull");
+        this.router.navigate(["specialevents"]);
+        this.toast.success({detail:'ADMIN FOUND', summary:'Login Successfull', duration:5000});
         this.loginForm.reset();
 
       }
       else if(user?.role=='user'){
         localStorage.setItem('token',users)
         this.router.navigate(["events"])
-        alert("Login Successfull");
+        this.toast.success({detail:'USER FOUND', summary:'Login Successfull', duration:5000});
         this.loginForm.reset();
        
       }else{
         if(!user){
-        alert("User not found!");
+        this.toast.error({detail:'NOT FOUND', summary:'Please Check Credentials', position:'tr', duration:10000});
         }}
      })
     }

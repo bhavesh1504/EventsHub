@@ -5,7 +5,6 @@
       "title": "json-server",
       "author": "typicode"
     },
-    
     {
       "email": "admin@admin.com",
       "password": "adminadmin",
@@ -17,6 +16,12 @@
       "password": "empemp",
       "role": "user",
       "id": 4
+    },
+    {
+      "email": "t@t.com",
+      "password": "tttttt",
+      "role": "user",
+      "id": 5
     }
   ],
   "comments": [

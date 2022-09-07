@@ -11,6 +11,7 @@ import { AuthService } from './service/auth.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { UserService } from './service/user.service';
 import { CommonInterceptor } from './service/common.interceptor';
+import {NgToastModule} from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CommonInterceptor } from './service/common.interceptor';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgToastModule
   ],
   providers: [AuthService, UserService,
   {provide: HTTP_INTERCEPTORS, useClass: CommonInterceptor, multi: true}],
